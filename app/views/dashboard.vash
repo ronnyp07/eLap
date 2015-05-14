@@ -1,0 +1,33 @@
+@html.extend('layout', function(model) {
+
+@html.block("script", function(model) {
+   <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+
+
+})
+
+@html.block("head", function(model){
+  
+})
+
+@html.block("body", function(model) {
+
+
+ <div class="container" >
+
+  <div class="row">
+  <div class="col-md-12">
+    @if(model._locals.user){
+    <div><p>Hola</p><h1>@model._locals.user.firstName</h1></div>
+    }else{
+      <div>does not contain anything </div>
+    }
+    
+
+  </div>
+  </div>
+  </div>
+
+
+})
+})

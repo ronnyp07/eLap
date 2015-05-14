@@ -1,0 +1,186 @@
+<!doctype html>
+<html >
+ <head>
+   <title>@model.title</title>
+<link href="/css/bootstrap.min.css"  rel="stylesheet"></link>
+
+<link href="/css/bootstrap-theme.min.css" rel="stylesheet"></link> 
+<link href="/css/angular.css" rel="stylesheet"></link>
+<link href="lib/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+<link href="/css/patients.css" rel="stylesheet"></link>
+<link href="/css/imprimir.css" rel="stylesheet"></link>
+<link href="/lib/select2/select2.css"  rel="stylesheet" ></link>
+<link href="lib/ng-table/dist/ng-table.min.css"  rel="stylesheet" ></link>
+<link href="lib/angular-material/angular-material.min.css"  rel="stylesheet" ></link>
+<link href="lib/jquery-ui/themes/smoothness/jquery-ui.css" rel="stylesheet" /><link>
+     @html.block("head")
+ </head>
+  <body>
+    <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">EasyLab</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="#">Easy-Lab</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+      @if(model._locals.user){
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mantenimiento <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#!/pais">Pais</a></li>
+            <li><a href="#">Zona</a></li>
+            <li><a href="#!/ciudad">Ciudad</a></li>
+            <li><a href="#!/sector">Sector</a></li>
+            <li class="divider"></li>
+            <li><a href="#!/clientes">Clientes</a></li>
+            <li><a href="#!/doctors">Doctores</a></li>
+            <li><a href="/#!/patients">Pacientes</a></li>
+            <li class="divider"></li>
+            <li><a href="#!/procs">Procedimientos</a></li>
+            <li><a href="#!/tempresult">Reporte Layout</a></li>
+            <li class="divider"></li>
+            <li><a href="#!/cierre">Cierre</a></li>
+           </ul>
+        </li>
+       <li>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Operaciones<span class="caret"></span></a>
+         <ul class="dropdown-menu" role="menu">
+           <li><a href="/#!/orders"> <i class="glyphicon glyphicon-menu-hamburger"></i> Ingresar Orden</a></li>
+           <li><a href="/#!/ordenesList">Catalogo Ordenes</a></li>
+         </ul>
+       
+
+       </li>
+       <li><a href="/#!/seguros/create">Seguros</a></li>
+       <li><a href="#">Hola <span class="glyphicon glyphicon-user"></span>   @model._locals.user.firstName </a></li>
+       <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Cerrar Session </a></li>
+       } else {
+       <li><a href="/signup">Registrar </a></li>
+       <li><a href="/signin">Iniciar Session </a></li>
+       }
+
+
+
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <section id="body" class="container cont">
+<!--     <div class="page-header">
+    </div> -->
+      @html.block("body")
+  </section>
+  <hr/>
+
+  <footer class="container">
+    <p>Ronny Morel</p>
+  </footer>
+ 
+  <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+ <script type="text/javascript" src="lib/jquery-ui/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="lib/jquery-ui/ui/minified/i18n/datepicker-es.min.js"></script>
+ <script type="text/javascript" src="lib/select2/select2.min.js"></script>
+ <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+ <script type="text/javascript" src="lib/angular-aria/angular-aria.min.js"></script>
+ <script type="text/javascript" src="lib/angular-ui-date/src/date.js"></script>
+   <script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="lib/angular-resource/angular-resource.min.js"></script>
+ <script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
+ 
+  <script type="text/javascript" src="lib/angular-material/angular-material.js"></script>
+
+  <script type="text/javascript" src="lib/angular-ui-select2/src/select2.js"></script>
+   <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="lib/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+ 
+  <script type="text/javascript" src="lib/ng-table/dist/ng-table.js"></script>
+  <script type="text/javascript" src="lib/angular-utils-pagination/dirPagination.js"></script>
+ <script src="lib/moment/moment.js"></script>
+ <script src="lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="lib/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+
+  <script type="text/javascript" src="/examples/example.client.module.js"></script>
+
+
+
+<script type="text/javascript" src="/pais/pais.client.module.js"></script>
+<script type="text/javascript" src="/pais/controllers/pais.client.controller.js"></script>
+<script type="text/javascript" src="/pais/services/pais.client.service.js"></script>
+<script type="text/javascript" src="/pais/config/pais.client.routes.js"></script>
+
+<script type="text/javascript" src="/ciudad/ciudad.client.module.js"></script>
+<script type="text/javascript" src="/ciudad/controllers/ciudad.client.controller.js"></script>
+<script type="text/javascript" src="/ciudad/services/ciudad.client.services.js"></script>
+<script type="text/javascript" src="/ciudad/config/ciudad.client.routes.js"></script>
+
+<script type="text/javascript" src="/sectors/sectors.client.module.js"></script>
+<script type="text/javascript" src="/sectors/controllers/sectors.client.controller.js"></script>
+<script type="text/javascript" src="/sectors/services/sectors.client.service.js"></script>
+<script type="text/javascript" src="/sectors/config/sectors.client.routes.js"></script>
+
+
+
+
+ <script type="text/javascript" src="/clientes/clientes.client.module.js"></script>
+<script type="text/javascript" src="/clientes/controllers/clientes.client.controller.js"></script>
+<script type="text/javascript" src="/clientes/services/clientes.client.service.js"></script>
+<script type="text/javascript" src="/clientes/config/clientes.client.route.js"></script>
+
+<script type="text/javascript" src="/doctors/doctor.client.module.js"></script>
+<script type="text/javascript" src="/doctors/controllers/doctor.client.controller.js"></script>
+<script type="text/javascript" src="/doctors/services/doctor.client.service.js"></script>
+<script type="text/javascript" src="/doctors/config/doctor.client.route.js"></script>
+
+<script type="text/javascript" src="/patients/patients.client.module.js"></script>
+<script type="text/javascript" src="/patients/controllers/patients.client.controller.js"></script>
+   <script type="text/javascript" src="/patients/services/patients.client.service.js"></script>
+<script type="text/javascript" src="/patients/config/patients.client.route.js"></script>
+
+<script type="text/javascript" src="/procedimientos/procedimientos.client.module.js"></script>
+<script type="text/javascript" src="/procedimientos/controllers/procedimientos.client.controller.js"></script>
+<script type="text/javascript" src="/procedimientos/services/procedimientos.client.services.js"></script>
+<script type="text/javascript" src="/procedimientos/config/procedimientos.client.routes.js"></script>
+
+<script type="text/javascript" src="/orders/orders.client.module.js"></script>
+<script type="text/javascript" src="/orders/controllers/orders.client.controller.js"></script>
+<script type="text/javascript" src="/orders/services/orders.client.service.js"></script>
+<script type="text/javascript" src="/orders/config/orders.client.route.js"></script>
+
+<script type="text/javascript" src="/cierretrack/cierretrack.client.module.js"></script>
+<script type="text/javascript" src="/cierretrack/controllers/cierretrack.client.controller.js"></script>
+<script type="text/javascript" src="/cierretrack/services/cierretrack.client.services.js"></script>
+<script type="text/javascript" src="/cierretrack/config/cierretrack.client.router.js"></script>
+
+
+<script type="text/javascript" src="/results/result.client.module.js"></script>
+<script type="text/javascript" src="/results/controllers/result.client.controller.js"></script>
+<script type="text/javascript" src="/results/services/result.client.service.js"></script>
+<script type="text/javascript" src="/results/config/result.client.route.js"></script>
+
+
+<script type="text/javascript" src="/tempresult/tempresult.client.module.js"></script>
+<script type="text/javascript" src="/tempresult/controllers/tempresult.client.controller.js"></script>
+<script type="text/javascript" src="/tempresult/services/tempresult.client.service.js"></script>
+<script type="text/javascript" src="/tempresult/config/tempresult.client.route.js"></script>
+
+  <script type="text/javascript" src="/users/users.client.module.js"></script>
+
+   <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+ <script type="text/javascript" src="application.js"></script>
+
+
+
+  @html.block("script")  
+</body>
+</html>

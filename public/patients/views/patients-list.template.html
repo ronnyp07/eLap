@@ -1,0 +1,32 @@
+<div>
+  <table ng-table="tableParams" show-filter="true" class="table table-striped">
+
+        <tr ng-repeat="patient in $data">
+         <td data-title="'Nombre'" filter="{'patientFirstName': 'text' }">{{patient.patientFirstName}} {{patient.patientLastName}}</td>
+       <td data-title="'#'"  >{{patient.patientId}}</td>
+       <td data-title="'Identificacion'">{{patient.PatientCI.value}} </td>
+      <!--  <td data-title="'Tipo Cliente'" filter="{'tipo': 'text' }"><span ng-if="cliente.tipo == 'A'">Aseguradora</span>
+      <span ng-if="cliente.tipo == 'C'">Clinicas</span>
+       </td> -->
+      
+       <td data-title="'Telefono'" >{{patient.patientTelefono}}</td>
+       
+       <td data-title="'Aseguradora'">{{patient.clientes.name}}</td>
+       
+      <!--  <td data-title="'RNC'" filter="{'clienteRNC': 'text' }">{{cliente.clienteRNC}}</td>
+       <td data-title="'Telefono'" filter="{'clienteTelefono': 'text' }">{{cliente.clienteTelefono}}</td> -->
+       <td>
+          <div>
+           <button type="button" class="btn btn-info" title="Editar" ng-click="pacientsCtrl.modelUpdate('lg', patient)">
+            <span class="glyphicon glyphicon-eye-open labelBig"></span></button> 
+            <button type="button" class="btn btn-danger" title="Remove" ng-click="pacientsCtrl.modelRemove('sm', patient)"><span class="glyphicon glyphicon-remove-circle labelBig"></span></button>
+         </div>
+
+       </td>
+     </tr>
+    
+  </table>
+   <div>
+     <p><strong>Total Pacientes:</strong> {{total}}</p>
+     </div>
+</div>

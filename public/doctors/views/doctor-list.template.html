@@ -1,0 +1,23 @@
+<div>
+  <table ng-table="tableParams" show-filter="true" class="table table-striped">
+
+        <tr ng-repeat="doctor in $data">
+         <td data-title="'Nombre'" filter="{'firstName': 'text' }">{{doctor.firstName}} {{doctor.lastName}}</td>
+       <td data-title="'#'"  >{{doctor.DoctorId}}</td>
+       <td data-title="'Telefono'">{{doctor.DoctorTelefono}} </td>
+       <td data-title="'Email'">{{doctor.DoctorEmail}} </td>
+       <td>
+          <div>
+           <button type="button" class="btn btn-info" title="Editar" ng-click="doctorsCtrl.modelUpdate('lg', doctor)">
+            <span class="glyphicon glyphicon-eye-open labelBig"></span></button> 
+            <button type="button" class="btn btn-danger" title="Remove" ng-click="pacientsCtrl.modelRemove('sm', patient)"><span class="glyphicon glyphicon-remove-circle labelBig"></span></button>
+         </div>
+
+       </td>
+     </tr>
+    
+  </table>
+   <div>
+     <p><strong>Total Pacientes:</strong> {{total}}</p>
+     </div>
+</div>

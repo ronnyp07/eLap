@@ -1,0 +1,16 @@
+<section data-ng-controller="patientDeleteController as deleteCtrl">
+ <div class="modal-body">
+  <div class="panel panel-danger ">
+         <div class="panel-heading">
+           <i class="glyphicon glyphicon-user"></i> {{patient.patientFirstName}} {{patient.patientLastName}}
+         </div>
+           <div class="modal-body">
+           Seguro que quiere eliminar paciente
+           </div>
+  </div>
+  </div>
+  <div class="modal-footer">
+   <button class="btn btn-danger" ng-click="deleteCtrl.delete(patient); ok(); deleteCtrl.showSimpleToast()" >Eliminar</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancelar</button>
+   </div>
+</section>

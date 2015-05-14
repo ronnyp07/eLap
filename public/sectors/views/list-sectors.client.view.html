@@ -1,0 +1,36 @@
+<section data-ng-controller="sectorController as sectorCtrl" >
+   <div class="container">
+       <div class="panel panel-warning">
+           <div class="panel-heading">
+           <div class="row">
+                 <div class="col-md-8"><h1>Maestro Sector</h1></div>
+           </div>
+           </div> 
+          <sector-list></sector-list> 
+          
+       </div>
+
+    <div class="alert alert-warning text-center" data-ng-hide="!sector.$resolved || sectorCtrl.sector.length">
+
+<!--     <div class="lit-group">
+        <a data-ng-repeat="pai in pais" data-ng-href="#!/pais/{{pai._id}}" class="list-group-item">
+    <div class ="row">
+           <div class="col.md.10">
+               
+           </div>
+      <h4 class="list-group-item-heading" data-ng-bind="pai.name"></h4>
+            <div class="col.md.2">
+                <div>
+                    <button type="button" class="btn btn-default" title="View" ng-click="view(customer)"><span class="glyphicon glyphicon-eye-open"></span></button> 
+
+                    <button type="button" class="btn btn-default" title="Edit" ng-click="edit(customer)"><span class="glyphicon glyphicon-edit"></span></button> 
+
+                    <button type="button" class="btn btn-default" title="Remove" ng-click="delete(customer)"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                 </div>
+            </div>
+        </div>
+        </a>
+    </div> -->
+      No hay ningun pais registrado<a href="/#!/sector/create"> Crea uno</a>?
+    </div>
+</section>

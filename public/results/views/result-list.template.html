@@ -1,0 +1,55 @@
+<div ng-controller="resultListController">
+<div class="row">
+ <div class="col-md-12">
+     <div class="row">
+              <div class="col-sm-6">
+                  <div class="form-group">
+
+            <input ng-model="q" id="search" class="form-control" placeholder="Filter text" ng-change="pageChanged(1, q)">
+            </div>
+            </div>
+
+            <div class="col-sm-6">
+                  <div class="form-group">
+                  <input date-range-picker ng-change="dateChange(pagination.current, q)" class="form-control date-picker" type="text" ng-model="date" />
+                   </div>
+            </div>
+
+            </div>
+            
+        <table class="table table-striped">
+        <thead>
+                <th>Sereal</th>
+                <th>Fecha Creacion</th>
+                <th>Estado</th>
+                <th>No. Authorizacion</th>
+                <th>Monto a Pagar</th>
+            </thead>
+            <tr dir-paginate="user in users | itemsPerPage: 5" current-page="cPage" total-items="totalUsers">
+            
+                    <td>{{ user.rSereal }}</td>
+                    <td>{{ user.created | date: 'dd/MM/yyyy'}}</td>
+                    <td data-title="'Estatus'" ><span ng-if="user.reportStatus == 'Pendiente'" class="label label-danger"> {{user.reportStatus}} </span>
+        <span ng-if="user.reportStatus == 'Pagado'" class="label label-success"> {{user.reportStatus}} </span>
+       </td>
+       <td>{{user.noAutho}}</td>
+       <td>{{user.total}}</td>
+         <td>
+          <div>
+           <a class="btn btn-info" title="Editar" ng-click="setResult(user)">
+            <span class="glyphicon glyphicon-eye-open"></span><a/> 
+            
+            <!-- <button type="button" class="btn btn-success" title="Facturar" ng-click="clienteCtrl.modelRemove('sm', cliente)"><span class="glyphicon glyphicon-usd "></span></button> -->
+
+           <!--   <button type="button" class="btn btn-primary" title="Imprimir" ng-click="clienteCtrl.modelRemove('sm', cliente)"><span class="glyphicon glyphicon-download-alt"></span></button> -->
+     
+         </div>
+       </td>
+                </tr>
+        </table>
+  {{pagination.current}}
+    <dir-pagination-controls  on-page-change="pageChanged(newPageNumber, q,  pagination.current)"></dir-pagination-controls>
+
+           </div>
+</div>
+</div>

@@ -1,0 +1,212 @@
+body {
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  background-color: #023E54; 
+  background-image: url(images/fallback-gradient.png); 
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#023E54), to(#10AAC0));
+  background-image: -webkit-linear-gradient(top, #023E54, #10AAC0); 
+  background-image: -moz-linear-gradient(top, #023E54, #10AAC0);
+  background-image: -o-linear-gradient(top, #023E54, #10AAC0);
+  min-height: 100%;
+  height: auto;
+}
+
+html {
+  
+}
+
+.h1{
+  color: #145266;
+  font-size: 2.2rem;
+  line-height: 100%;
+  margin-bottom: 10px;
+}
+
+#loginwrap{
+	
+	width: 350px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	position: absolute;
+	top: 300px;
+}
+
+#chat{
+	height: 250px;
+	width: 250px;
+	background-color: #F5F5DC;
+    color: #000000;
+    list-style-type: none; margin: 0; padding: 0; 
+}
+
+#chat li { padding: 5px 10px; }
+
+#messages li:nth-child(odd) { background: #eee; }
+
+#messageInput{
+	width: 250px;
+	font-size: 1em;
+}
+
+#warp{
+	float:left;
+	border: 5px;
+}
+
+#divWrap{
+	position: absolute;
+	width: 350px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color:#A9D0F5; 
+	display:none;
+
+}
+
+#map{
+	position: absolute;
+	top: 0em;
+	font-size: 1em;
+	width: 100%;
+	height: 650px;
+}
+#inpute{
+	width: 250px;
+}
+
+#footer{
+	margin-top: 655px;
+	height: 30px;
+	width: 100%;
+}
+
+#close {
+	background: #f6f6f6;
+	-webkit-border-radius: 100% 100%;
+	-moz-border-radius: 100% 100%;
+	border-radius: 100% 100%;
+	box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+	color: #333;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	right: -15px;
+	text-align: center;
+	text-decoration: none;
+	top: -10px;
+	width: 30px;
+}
+#Fmessage{
+	float:left;
+}
+#errorUser{
+	margin-top: 5px;
+	display: none;
+}
+
+#inputeLog{ 
+	width: 100px;
+}
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+  text-align: center;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+	background-color: #4288CA;
+	color:#ffffff;
+}
+
+.imagesT {
+	width: 114px;
+	height: 126px;
+
+}
+
+.flaot{
+	float: left;
+}
+
+.details {
+  margin: 0;
+  padding: 0;
+  background: #FDF6E3;
+}
+
+.details li {
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-decoration: none;
+}
+#logros{
+	margin-left: 40px;
+   line-height: 90%;
+  color: #c61c6f;
+   font-size: 1.5rem;
+}
+
+.nombre{
+color:  #bd3613;
+  font-size: 2.2rem;
+  line-height: 100%;
+}
+.fname{
+	 color: #c61c6f;
+}
+.contract{
+	padding-left: 150px;
+}
+
+.la{
+	padding-top: 30px;
+}
+
+.search {
+  background: #063642;
+  color: #EEE8D5;
+  width: 90%;
+  min-width: 320px;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 20px;
+  padding: 20px 30px;
+  z-index: 20;
+}
+
+.search h1 {
+  color: #EEE8D5;
+}
+
+.search label {
+  display: none;
+}
+
+.search input {
+  font-family: 'Droid Sans', sans-serif;
+  width: 100%;
+  padding: 10px 0 10px 15px;
+  font-size: 2rem;
+  color: #475B62;
+  background: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  outline: 0;
+}
+
+.search .formgroup input {
+  border: 1px solid rgba(0,0,0,0.3);
+  display: inline;
+  width: auto;
+}
+
+.search label.formgroup {
+  display: inline;
+  width: auto;
+}
+

@@ -1,0 +1,21 @@
+<div>
+  <table ng-table="tableParams" show-filter="true" class="table table-striped">
+     <tr ng-repeat="procs in $data">
+       <td data-title="'#'"  >{{procs.ProcsId}}</td> 
+       <td data-title="'Procedimiento'" filter="{'name': 'text' }">{{procs.name}}
+       </td>
+       <td data-title="'Costo'" >{{procs.costo}}
+       </td>
+       <td>
+          <div>
+           <button type="button" class="btn btn-info" title="Editar" ng-click="procsCtrl.modelUpdate('sm', procs)">
+            <span class="glyphicon glyphicon-eye-open labelBig"></span></button> 
+            <button type="button" class="btn btn-danger" title="Remove" ng-click="procsCtrl.modelRemove('sm', procs)"><span class="glyphicon glyphicon-remove-circle labelBig"></span></button>
+         </div>
+       </td>
+     </tr>
+  </table>
+   <div>
+     <p><strong>Total Procedimientos:</strong> {{total}}</p>
+    </div>
+</div>

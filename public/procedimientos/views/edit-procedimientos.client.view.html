@@ -1,0 +1,51 @@
+<section data-ng-controller="procsUpdateController as UpCtrl">
+
+<div class="modal-header">
+        <h3 class="modal-title">Actualizar Procedimiento</h3>
+        </div>
+        <div class="modal-body">
+        <form name="UpdateProcsForm" id="UpdateProcsForm">
+            <fieldset>
+                <div class="form-group">
+                   <label class="control-label" for="pais">Nombre</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="procs.name" id="name" class="form-control" placeholder="--Nombre Procedimiento--" required>
+                    
+                    </div>
+                 </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">Costo:</label>
+                    <div class="controls">
+                        <input type="number" data-ng-model="procs.costo" id="costo" class="form-control" placeholder="--Costo Procedimiento--" >
+                    
+                    </div>
+               </div>
+                   <div class="form-group">
+                    <label class="control-label" for="name">Categoria:</label>
+                    <div class="controls">
+            <select data-ng-model="procs.proType" id="proType" class="form-control"  style="">
+            <option value="" class="">-- Categoria --</option>
+            <option value="B" label="Biopsia">Biopsia</option>
+            <option value="P" label="Papanicola">Papanicolau</option>
+            <option value="C" label="Citologia">Citologia</option>
+            <option value="BL" label="Base Liquida">Base Liquida</option>
+            </select>                   
+                    </div>
+               </div>
+              
+              
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+      
+        
+        </div>
+
+        <div class="modal-footer">
+    <button class="btn btn-success" ng-click="UpCtrl.update(procs); ok(); UpCtrl.showSimpleUdpdate()" ng-disabled="UpdateProcsForm.$invalid">Guardar & Salir</button>
+            <button class="btn btn-warning" ng-click="cancel()">Salir</button>
+      </div>
+
+</section>

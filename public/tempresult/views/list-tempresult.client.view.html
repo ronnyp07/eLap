@@ -1,0 +1,40 @@
+<section data-ng-controller="tempresultController as tempresultCtrl" >
+   <div class="container">
+       <div class="panel panel-info">
+           <div class="panel-heading">
+           <div class="row">
+                 <div class="col-md-12"><h1><i class="glyphicon glyphicon-user"></i> Maestro Template</h1></div>
+           </div>
+           </div> 
+           <div class="row">
+           <div class="col-md-12 textRight divmarginAll">
+           <div>
+            <button type="submit" class="btn btn-large btn-primary text-center" ng-click="tempresultCtrl.modelCreate('lg')">
+             <i class="glyphicon glyphicon-globe"></i>
+             <br>Ingresar Layout</button>
+           </div>
+           </div>
+           </div>
+          
+           <div class="row">
+           <div class="col-md-12">
+            <input ng-model="q" id="search" class="form-control" placeholder="Filter text" ng-change="pageChanged(1, q)">
+        <table>
+            <tr dir-paginate="user in users | itemsPerPage: 4" total-items="totalUsers">
+                    <td>{{ user.reportname }}</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+        </table>
+
+    <dir-pagination-controls on-page-change="pageChanged(newPageNumber, q)"></dir-pagination-controls>
+
+           </div>
+           </div>
+          
+       </div>
+       </div>
+
+    <div class="alert alert-warning text-center" data-ng-hide="!cliente.$resolved || pacientsCtrl.clientes.length">
+      No hay ningun procedimiento registrado<a href="/#!/pais/create"> Crea uno</a>
+    </div>
+</section>

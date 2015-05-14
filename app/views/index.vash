@@ -1,0 +1,27 @@
+@html.extend('layout', function(model) {
+
+@html.block("script", function(model) {
+
+})
+
+@html.block("head", function(model){
+  
+})
+
+@html.block("body", function(model) {
+
+   <script type="text/javascript">
+       window.user =  @html.raw(model.user)
+    </script>
+
+ <div class="container" >
+
+  <div class="row">
+  <div class="col-md-12">
+    <section ng-view=""> </section>
+  </div>
+  </div>
+  </div>
+
+})
+})

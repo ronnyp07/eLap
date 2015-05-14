@@ -1,0 +1,159 @@
+<section data-ng-controller="PatientsUpdateController as UpCtrl" >
+    <div class="modal-header">
+        <h3 class="modal-title">Actualizar Paciente: {{patient.patientFirstName}} {{patient.patientLastName}} </h3>
+    </div>
+    <div class="modal-body">
+        <form name="createPatientForm" id="createPatientForm">
+            <fieldset>
+                <div class="row">
+                    <div class="form-group">
+                        <div data-ng-show="error" class="text-center text-danger ng-hide">
+                            <div class="alert alert-danger" role="alert">
+                                <strong data-ng-bind="error" class="ng-binding"></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <i class="glyphicon glyphicon-user cust-profile textPink" ng-class=""></i>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group divmargin" >
+                            <label class="control-label" for="PatientCI">C.I.</label>
+                             <div class="controls">
+                        <select data-ng-model="patient.PatientCI.tipo" id="UpCtrl.tipo" class="form-control" name="tipo" style=""><option value="" class="">-- Tipo Entidad --</option><option value="Cedula" label="">Cedula</option><option value="Pasaporte" label="">Pasaporte</option>
+                         <option value="RNC" label="">RNC</option></select>
+                            </div>
+                            <div class="controls">
+                                <input type="text" data-ng-model="patient.PatientCI.value" name="tipovalue" id="tipovalue" class="form-control" placeholder="ej. 000-000000-0" style="">
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="patientFirstName">Nombres</label>
+                            <div class="controls">
+                            <input type="text" data-ng-model="patient.patientFirstName" id="patientFirstName" name="patientFirstName" autocomplete="false" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="patientLastName">Apellidos</label>
+                            <div class="controls">
+                             <input type="text" data-ng-model="patient.patientLastName" id="patientLastName" name="patientLastName" class="form-control">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label class="control-label" for="patientDOB"> Fecha de Nacimiento</label>
+
+                            <div class="controls">
+                            	<input ui-date="dateOptions" data-ng-model="patient.patientDOB" name="DateOfBirth" class="form-control">
+                            </div>
+                        <!--     <div class="controls">
+                                <input type="text" data-ng-model="patient.patientDOB | date:dd/MM/yyyy" id="patientDOB" name="patientDOB" pattern="\d{1,2}-\d{1,2}-\d{4}"
+       placeholder="dd-MM-yyyy"  class="form-control">
+
+                         
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="patientEdad" > Edad</label>
+                            <div class="controls">
+                                <input type="number" data-ng-model="patient.patientEdad" id="patientEdad" name="patientEdad" class="form-control" min="0" max="99" required>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-6">
+                        <div class="form-group">
+                            <label class="control-label" for="patientpatientSexo">Sexo</label>
+                            <div class="controls">
+                                <select data-ng-model="patient.patientSexo" id="patientSexo" class="form-control"  style=""><option value="" class="">-- Seleccione Sexo --</option><option value="Masculino" label="Masculino">Masculino</option><option value="Femenino" label="Femenino">Femenino</option></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="patientEC">Estado Civil</label>
+                            <div class="controls">
+                                <select data-ng-model="patient.patientEC" id="patientEC" class="form-control"  style=""><option value="" class="">-- Estado Civil--</option><option value="casado">Casado</option><option value="Soltero" >Soltero</option></select>
+                            </div>
+                        </div>
+                     <div class="form-group">
+                         <label class="control-label" for="clientes">Aseguradora</label>
+                        <div class="controls">
+                        <select data-ng-model="patient.rcliente" id="clientes" class="form-control" name="clientes" ng-options="value._id as value.name for value in UpCtrl.cliente.results | filter: {tipo: 'A'}" >
+                        <option value="" class="">-- Selecione Seguro --</option>
+                        </select>        
+                       </div>
+                   </div>
+                    <div class="form-group">
+                            <label class="control-label" for="patientPolisa">Polisa</label>
+                            <div class="controls">
+                            <input type="text" data-ng-model="patient.patientPolisa" id="patientPolisa" name="patientPolisa" autocomplete="false" class="form-control">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                          <label class="control-label" for="patientTelefono">Telefono</label>
+                            <div class="controls">
+                            <input type="text" data-ng-model="patient.patientTelefono" id="Telefono" name="patientTelefono" class="form-control">
+                            </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-6 col-sm-pull-6 ">
+                           <div class="form-group">
+                            <label class="control-label" for="patientPais">Pais</label>
+                            <div class="controls">
+                        <select data-ng-model="patient.rpais" data-ng-change="UpCtrl.filterByPais()" id="pais" class="form-control" name="pais" ng-options="value._id as value.name for value in UpCtrl.pais" >
+                        <option value="" class="">-- Selecione Pais --</option>
+                        </select>        
+                            </div>
+                            </div>
+                        <div class="form-group">
+                            <label class="control-label" for="patientZona">Zona</label>
+                            <div class="controls">
+                        <select data-ng-model="createCtrl.patientZona" id="patientZona" class="form-control" name="patientZona" ng-options="value._id as value.seguroNombre for value in seguros" >
+                        <option value="" class="">-- Selecione Zona --</option>
+                        </select>        
+                            </div>
+                        </div>
+
+                         <div class="form-group">
+                              <label class="control-label" for="patientCiudad">Ciudad</label>
+                            <div class="controls">
+                     <select data-ng-model="patient.rciudad" id="patientZona" data-ng-change="UpCtrl.filterByCiudad()" class="form-control" name="patientZona" ng-options="value._id as value.name for value in UpCtrl.ciudad | filter:patient.rpais" >
+                        <option value="" class="">-- Selecione Ciudad --</option>
+                      </select>    
+
+                          </div>
+                          </div>
+                      <div class="form-group">
+                            <label class="control-label" for="patientSector">Sector</label>
+                            <div class="controls">
+         <select data-ng-model="patient.rsector" id="patientSector" class="form-control" name="patientSector" ng-options="value._id as value.name for value in UpCtrl.sector | filter: patient.rciudad" >
+         <option value="" class="">-- Selecione Sector --</option>
+                        </select>        
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label" for="patientDireccion">Direccion</label>
+                            <div class="controls">
+                              <input type="text" data-ng-model="patient.patientDireccion" id="patientDireccion" name="patientDireccion" class="form-control">
+                            </div>
+                        </div>
+
+                       
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                    
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success btn-lg"  ng-click="UpCtrl.update(patient); ok(); UpCtrl.showPatientSave()" ng-disabled="updatePatientForm.$invalid">Save &amp; Close</button>
+        <button class="btn btn-warning btn-lg" ng-click="cancel()">Cancel</button>
+    </div>
+
+</section>

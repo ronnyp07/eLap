@@ -1,0 +1,90 @@
+<section data-ng-controller="tempresultCreateController as createCtrl" >
+    <div class="modal-header">
+        <h3 class="modal-title">Nuevo Print Template</h3>
+    </div>
+    <div class="modal-body">
+        <form name="createtemplateForm" id="createtemplateForm">
+            <fieldset>
+                <div class="row">
+                    <div class="form-group">
+                        <div data-ng-show="error" class="text-center text-danger ng-hide">
+                            <div class="alert alert-danger" role="alert">
+                                <strong data-ng-bind="error" class="ng-binding"></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                    <label class="control-label" for="name">Categoria:</label>
+                            <div class="controls">
+                    <select data-ng-model="proType" id="proType" class="form-control"  style="">
+                    <option value="" class="">-- Categoria --</option>
+                    <option value="B" label="Biopsia">Biopsia</option>
+                    <option value="P" label="Papanicola">Papanicolau</option>
+                    <option value="C" label="Citologia">Citologia</option>
+                    <option value="BL" label="Base Liquida">Base Liquida</option>
+                    </select>                   
+                            </div>
+                       </div>
+                </div>
+                  <div class="col-sm-6">
+                   <div class="form-group">
+                     <label class="control-label" for="">Nombre Reporte</label>
+                     <div class="controls">
+                        <input type="text" data-ng-model="reportname" id="reportName" name="reportName" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                </div>
+                 
+                <div class="row">
+                   <div class="col-sm-6">
+                   <div class="form-group">
+                     <label class="control-label" for="">Resultado</label>
+                     <div class="controls">
+                        <textarea rows="7" ng-trim="false" ng-model="resultado" name= "restultado" id="Resultado" maxlength="500" class="form-control" placeholder="Nota">
+                     </textarea>
+                      </div>
+                      </div>
+                    </div>
+                       <div class="col-sm-6">
+                   <div class="form-group">
+                     <label class="control-label" for="">Diagnostico</label>
+                     <div class="controls">
+                        <textarea rows="7" ng-trim="false" ng-model="diagnostico" name = "diagnostico" id="Diagnostico" maxlength="500" class="form-control" placeholder="Nota">
+                     </textarea>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+
+                 <div class="row">
+                   <div class="col-sm-6">
+                   <div class="form-group">
+                     <label class="control-label" for="">Tecnica</label>
+                     <div class="controls">
+                        <textarea rows="7" ng-trim="false" ng-model="tecnica" name = "tecnica" id="Resultado" maxlength="500" class="form-control" placeholder="Nota">
+                     </textarea>
+                      </div>
+                      </div>
+                    </div>
+                       <div class="col-sm-6">
+                   <div class="form-group">
+                     <label class="control-label" for="">Nota</label>
+                     <div class="controls">
+                        <textarea rows="7" ng-trim="false" ng-model="nota" name= "note" id="Diagnostico" maxlength="500" class="form-control" placeholder="Nota">
+                     </textarea>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+              
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success btn-lg"  ng-click="createCtrl.create(); ok(); createCtrl.showPatientSave()" ng-disabled="createPatientForm.$invalid">Save &amp; Close</button>
+        <button class="btn btn-warning btn-lg" ng-click="cancel()">Cancel</button>
+    </div>
+
+</section>

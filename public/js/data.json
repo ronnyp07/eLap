@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Ronny Pabel Morel Mesa",
+        "contract": "Mi contrato es: Soy un hombre fiel, amoroso y atento.",
+        "short_name": "Ronny",
+        "metas": [
+            "Aprender tres textos cada dia",
+            "Leer un libro cada mes"
+        ]
+    },
+    {
+        "name": "Carolina Sanchez Urena",
+        "contract": "Mi contrato es: Yo soy una mujer  amorosa, valiente y poderosa",
+        "short_name": "Carolina",
+        "metas": [
+            "Cobertura de al menos 4 comidas familiares y alcanze de aproximadamente 500 personas mensuales.",
+            "Apoyo oficial para la fundación.",
+            "21 dias sin comer queso ni chocolate.",
+            "2 Meses sin consumir soda u otra bebida artificial."
+        ]
+    },
+         
+         {"name" : "Melissa Ortega",
+         "contract" : "Mi contrato es: Yo soy una mujer  amorosa, segura y decidida. ",
+          "short_name":"Daly",
+         "metas" : ["Cuidar mi cuerpo bebiendo mucha agua y hacienda ejercicios",
+         "Levantarme a las 5 de la mañana a comunicarme con Dios."]
+         },
+
+         {"name" : "Daly Isabel Marte Encarnacion",
+           "short_name":"melissa",
+         "contract" : "Mi contrato es: Yo soy una mujer integra, amorosa, y fiel",
+         "metas" : ["Mi relación con dios, mi esposo le he dedicado tiempo y he logrado estar lo más cerca de él.",
+         "Todo está resuelto con mis amigas."]}
+
+
+]

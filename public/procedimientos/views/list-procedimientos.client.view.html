@@ -1,0 +1,31 @@
+<section data-ng-controller="procsController as procsCtrl" >
+   <div class="container">
+       <div class="panel panel-success">
+           <div class="panel-heading">
+           <div class="row">
+                 <div class="col-md-12"><h1>Maestro Procesimientos</h1></div>
+           </div>
+           </div> 
+           <div class="row">
+           <div class="col-md-12 textRight divmarginAll">
+           <div>
+            <button type="submit" class="btn btn-large btn-success text-center" ng-click="procsCtrl.modelCreate('sm')">
+             <i class="glyphicon glyphicon-globe"></i>
+             <br>Ingresar Procedimiento</button>
+           </div>
+           </div>
+           </div>
+          
+           <div class="row">
+           <div class="col-md-12">
+           <procs-list></procs-list>
+           </div>
+           </div>
+          
+       </div>
+       </div>
+
+    <div class="alert alert-warning text-center" data-ng-hide="!cliente.$resolved || clienteCtrl.clientes.length">
+      No hay ningun procedimiento registrado<a href="/#!/pais/create"> Crea uno</a>
+    </div>
+</section>

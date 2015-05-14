@@ -1,0 +1,106 @@
+<section data-ng-controller="clienteCreateController as createCtrl" >
+    <div class="modal-header">
+        <h3 class="modal-title"><i class="glyphicon glyphicon-user"></i> Crear Cliente</h3>
+    </div>
+    <div class="modal-body">
+    
+        <form name="createclienteForm" >
+         <input type="hidden" name="_csrf" value="@model.csrfToken">
+            <fieldset>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-3">
+
+                  <div class="panel panel-success well">
+                             <div class="panel-heading">
+                               Informacion del Cliente 
+                             </div>
+                                  
+                <div class="form-group divmargin" >
+                <div class="controls">
+                <select data-ng-model="createCtrl.tipo" id="tipo" name="tipo" class="form-control"  style=""><option value="" class="">-- Tipo Entidad --</option><option value="A" label="">Aseguradora</option><option value="C" label="">Clinicas</option>
+                </select>
+                </div>
+                <div class="controls">
+                <input type="text" data-ng-model="createCtrl.clienteRNC" id="clienteRNC" class="form-control" name="clienteRNC" placeholder="RNC ej. 000-000000-0" style="">
+                </div>
+                </div>
+         
+
+                 <div class="form-group">
+                 <label class="control-label" for="name">Nombre</label>
+                        <div class="controls">
+                          <input type="text" data-ng-model="createCtrl.name" id="name" name="name" class="form-control">
+                       </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label" for="clienteTelefono">Telefono</label>
+                            <div class="controls">
+                            <input type="text" data-ng-model="createCtrl.clienteTelefono" id="clienteTelefono" name="clienteTelefono" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                      <div class="panel panel-warning well">
+                             <div class="panel-heading"> 
+                             Informacion Distrital</div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="clientePais">Pais</label>
+                            <div class="controls">
+                        <select data-ng-model="createCtrl.clientePais" data-ng-change="createCtrl.filterByCity()"  id="clientePais" class="form-control" ng-options="value._id as value.name for value in createCtrl.pais" >
+                        <option value="" class="">-- Selecione Pais --</option>
+                        </select>        
+                            </div>
+                            </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="clienteZona">Zona</label>
+                            <div class="controls">
+                        <select data-ng-model="createCtrl.clienteZona" id="clienteZona" class="form-control" name="clienteZona" ng-options="value._id as value.clienteNombre for value in clientes" >
+                        <option value="" class="">-- Selecione Zona --</option>
+                        </select>        
+                            </div>
+                        </div>
+                        
+          <div class="form-group">
+                  <label class="control-label" for="clienteCiudad">Ciudad</label>
+                <div class="controls">
+              <select ui-select2 data-ng-model="createCtrl.clienteCiudad" class="selec2Big" data-ng-change="createCtrl.filterSector()" data-placeholder="-- Selecione Ciudad --">  <option value=""></option>
+              <option ng-repeat="value in createCtrl.ciudad | filter:createCtrl.clientePais " value="{{value._id}}">{{value.name}}</option>
+                            </select> 
+
+                            </div>
+                        </div>
+                      <div class="form-group">
+                            <label class="control-label" for="clienteSector">Sector</label>
+                            <div class="controls">
+                        <select data-ng-model="createCtrl.clienteSector" id="clienteSector" class="form-control" name="clienteSector" ng-options="value._id as value.name for value in createCtrl.sector | filter:createCtrl.clienteCiudad" >
+                        <option value="" class="">-- Selecione Sector --</option>
+                        </select>        
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label" for="clienteDireccion">Direccion</label>
+                            <div class="controls">
+                              <input type="text" data-ng-model="createCtrl.clienteDireccion" id="clienteDireccion" name="clienteDireccion" class="form-control" placeholder="Insertar Direccion">
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                  
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-3">
+                      <div class="modal-footer">
+            <button class="btn btn-success btn-lg"  ng-click="createCtrl.create(); ok(); doSearch()">Save &amp; Close</button>
+            <button class="btn btn-warning btn-lg" ng-click="cancel()">Cancel</button>
+           </div>
+                        </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+  
+
+</section>

@@ -1,0 +1,34 @@
+{
+  "name": "Angular",
+  "version": "0.0.0",
+  "description": "Angular application practices",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-windows-service": "winser -i",
+    "uninstall-windows-service": "winser -r"
+  },
+  "author": "Ronny Morel",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.1.0",
+    "body-parser": "^1.7.0",
+    "bower": "^1.3.12",
+    "client-sessions": "^0.7.0",
+    "compression": "^1.2.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.3.2",
+    "crypto": "0.0.3",
+    "csurf": "^1.6.4",
+    "express-session": "^1.9.3",
+    "method-override": "^2.3.0",
+    "mongodb": "^1.4.10",
+    "mongoose": "^3.8.21",
+    "mongoose-auto-increment": "^3.2.0",
+    "mongoose-middleware": "^0.2.10",
+    "morgan": "^1.5.0",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "vash": "^0.7.12-1"
+  }
+}

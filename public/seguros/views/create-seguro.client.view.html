@@ -1,0 +1,99 @@
+<section data-ng-controller="clienteCreateController as createCtrl" >
+    <div class="modal-header">
+        <h3 class="modal-title">Crear Seguro</h3>
+    </div>
+    <div class="modal-body">
+        <form name="createSeguroForm" >
+         <input type="hidden" name="_csrf" value="@model.csrfToken">
+            <fieldset>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-3">
+
+                  <div class="controls">
+                   <select data-ng-model="createCtrl.tipo" id="createCtrl.tipo" class="form-control"  style=""><option value="" class="">-- Tipo Entidad --</option><option value="A" label="">Aseguradora</option><option value="C" label="">Clinica</option>
+                  </div>
+
+                 <div class="form-group">
+                 <label class="control-label" for="seguroRNC">RNC</label>
+                 <div class="controls">
+                          <input type="text" data-ng-model="createCtrl.seguroRNC" id="clienteRNC" name="seguroRNC" class="form-control">
+                 </div>
+                </div>
+
+                 <div class="form-group">
+                 <label class="control-label" for="seguroNombre">Nombre</label>
+                        <div class="controls">
+                          <input type="text" data-ng-model="createCtrl.seguroNombre" id="seguroNombre" name="seguroNombre" class="form-control">
+                       </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label" for="seguroTelefono">Telefono</label>
+                            <div class="controls">
+                            <input type="text" data-ng-model="createCtrl.seguroTelefono" id="seguroTelefono" name="seguroTelefono" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="patientPais">Pais</label>
+                            <div class="controls">
+                        <select data-ng-model="patientCtrl.patientPais" id="patientPais" class="form-control" name="patientPais" ng-options="value._id as value.name for value in patientCtrl.pais" >
+                        <option value="" class="">-- Selecione Pais --</option>
+                        </select>        
+                            </div>
+                            </div>
+                        <div class="form-group">
+                            <label class="control-label" for="patientPais">Zona</label>
+                            <div class="controls">
+                        <select data-ng-model="patientCtrl.patientPais" id="patientPais" class="form-control" name="patientPais" ng-options="value._id as value.seguroNombre for value in seguros" >
+                        <option value="" class="">-- Selecione Zona --</option>
+                        </select>        
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="patientCiudad">Ciudad</label>
+                            <div class="controls">
+                        <select data-ng-model="patientCtrl.patientCiudad" id="patientCiudad" class="form-control" name="patientCiudad" ng-options="value._id as value.name for value in patientCtrl.ciudad" >
+                        <option value="" class="">-- Selecione Ciudad --</option>
+                        </select>        
+                            </div>
+                        </div>
+                      <div class="form-group">
+                            <label class="control-label" for="patientSector">Sector</label>
+                            <div class="controls">
+                        <select data-ng-model="patientCtrl.patientSector" id="patientSector" class="form-control" name="patientSector" ng-options="value._id as value.name for value in patientCtrl.sector" >
+                        <option value="" class="">-- Selecione Sector --</option>
+                        </select>        
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label" for="patientDireccion">Direccion</label>
+                            <div class="controls">
+                              <input type="text" data-ng-model="patientCtrl.patientDireccion" id="patientDireccion" name="patientDireccion" class="form-control">
+                            </div>
+                        </div>
+
+                       <div class="form-group">
+                       <label class="control-label" for="seguroDireccion">Direccion</label>
+                         <div class="controls">
+                     <input type="text" data-ng-model="createCtrl.seguroDireccion" id="seguroDireccion" name="seguroDireccion" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-3">
+                      <div class="modal-footer">
+            <button class="btn btn-success btn-lg"  ng-click="createCtrl.create()">Save &amp; Close</button>
+            <button class="btn btn-warning btn-lg" ng-click="createCtrl.cancel()">Cancel</button>
+           </div>
+                        </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+  
+
+</section>

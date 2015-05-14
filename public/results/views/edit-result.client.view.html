@@ -1,0 +1,265 @@
+ <div ng-controller="resultController">
+  <div class="container">
+  <form name="createtemplateForm" id="createtemplateForm">
+            <fieldset>
+
+  <div class="panel panel-info">
+           <div class="panel-heading">
+           <div class="row">
+                 <div class="col-md-12"><h1>Resumen de Reporte {{resultDetails.rSereal}}</h1></div>
+           </div>
+           </div>
+
+            <div class="row maringTop">
+ <div class="col-xs-12 ">
+   <div class="headercontainer">
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> Nombre: </label> {{resultDetails.nombre}}
+  </div>  
+    <div class="col-xs-6 details-container">
+      <label> Fecha </label> {{resultDetails.created}}
+    </div>  
+</div>
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> Centro: </label> {{resultDetails.clienteName}}
+  </div>  
+    <div class="col-xs-6 details-container">
+      <label> Muestra: </label> {{resultDetails.tipomuestraDesc}}
+    </div>  
+</div>
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> Medico: </label> {{resultDetails.doctorName}}
+  </div>  
+    <div class="col-xs-6 details-container">
+      <label> Edad: </label> {{resultDetails.patiendEdad}}
+    </div>  
+</div>
+
+</div>
+</div>
+</div>
+</div>
+ <div class="row">
+                    <div class="col-sm-4">
+                   <div class="form-group">
+                     <label class="control-label" for="">No. Autorizacion:</label>
+                     <div class="controls">
+                        <input type="text" data-ng-model="resultDetails.noAutho" id="noAutho" name="noAutho" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                       <div class="col-sm-4">
+                   <div class="form-group">
+                     <label class="control-label" for="">Costo:</label>
+                     <div class="input-group">
+                       <i class="input-group-addon">$</i>
+                        <input type="number" data-ng-model="resultDetails.total" id="reportName" name="reportName" class="form-control">
+                         <i class="input-group-addon">.00</i>
+                      </div>
+                      </div>
+                    </div>
+                      <div class="col-sm-4">
+                       <label class="control-label" for="">Reporte Estatus:</label>
+                    <div class="controls">
+                                <select data-ng-model="resultDetails.reportStatus"  class="form-control"  style=""><option value="" class="">-- Estado Pago --</option><option value="Pagado" label="Pagado">Pagado</option><option value="Pendiente" label="Pendiente">Pendiente</option></select>
+                          </div>
+                    </div>
+
+                </div>
+
+          <div class="panel panel-primary">
+           <div class="panel-heading">
+            <i class="glyphicon glyphicon-th"> </i> 
+                          Registrar Resultado
+                <i class="glyphicon glyphicon-chevron-down pull-right"></i>
+           </div>
+           <div class="resultBody">
+                <div class="row">
+                 
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                    <label class="control-label" for="name">Utilizar Layout:</label>
+                            <div class="controls">
+                    <select data-ng-model="proType" id="proType" class="form-control"  style="">
+                    <option value="" class="">-- Categoria --</option>
+                    <option value="B" label="Biopsia">Biopsia</option>
+                    <option value="P" label="Papanicola">Papanicolau</option>
+                    <option value="C" label="Citologia">Citologia</option>
+                    <option value="BL" label="Base Liquida">Base Liquida</option>
+                    </select>                   
+                            </div>
+                       </div>
+                </div>
+                  <div class="col-sm-6">
+                   <div class="form-group">
+                     <label class="control-label" for="">Nombre Reporte</label>
+                     <div class="controls">
+                        <input type="text" data-ng-model="resultDetails.reportName" id="reportName" name="reportName" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                </div>
+               
+                 
+                <div class="row">
+                   <div class="col-sm-6">
+                   <div class="form-group">
+                     <label class="control-label" for="">Resultado</label>
+                     <div class="controls">
+                        <textarea rows="7" ng-trim="false" ng-model="resultDetails.resultado" name= "restultado" id="Resultado" maxlength="500" class="form-control" placeholder="Nota">
+                     </textarea>
+                      </div>
+                      </div>
+                    </div>
+                       <div class="col-sm-6">
+                   <div class="form-group">
+                     <label class="control-label" for="">Diagnostico</label>
+                     <div class="controls">
+                        <textarea rows="7" ng-trim="false" ng-model="resultDetails.diagnostico" name = "diagnostico" id="Diagnostico" maxlength="500" class="form-control" placeholder="Nota">
+                     </textarea>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+
+                 <div class="row" ng-if="resultDetails.tipomuestra == 'B'">
+                   <div class="col-sm-6">
+                   <div class="form-group">
+                     <label class="control-label" for="">Tecnica</label>
+                     <div class="controls">
+                        <textarea rows="7" ng-trim="false" ng-model="tecnica" name = "tecnica" id="Resultado" maxlength="500" class="form-control" placeholder="Nota">
+                     </textarea>
+                      </div>
+                      </div>
+                    </div>
+                       <div class="col-sm-6">
+                   <div class="form-group">
+                     <label class="control-label" for="">Nota</label>
+                     <div class="controls">
+                        <textarea rows="7" ng-trim="false" ng-model="nota" name= "note" id="Diagnostico" maxlength="500" class="form-control" placeholder="Nota">
+                     </textarea>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            </div>
+               <div class="row">
+                  <div class="col-md-4">
+                  <button class="btn btn-success btn-lg"  ng-click="update(); ">Save &amp; Close</button>
+                  </div>
+                  <div class="col-md-4">
+                 <button class="btn btn-primary" ng-print print-element-id="printThisElement"><i class="fa fa-print"></i> Print</button>
+                  </div>
+                </div>
+            </fieldset>
+        </form>
+
+
+<div ng-show="false">
+<!--  <button class="btn btn-primary" ng-print print-element-id="printThisElement"><i class="fa fa-print"></i> Print</button> -->
+ <div class="print" id="printThisElement">
+ <div class="container">
+
+
+<div class="row">
+<div class="col-xs-3 title-containert">
+  <img src="images\logo1.jpg" width="235px">
+</div>
+<div class="col-xs-9 details-containert">
+<div class="titlecontainer">
+      <h1>LABORATORIO DE ANATOMIA PATOLOGICA Y CITOPATOLOGICA</h1>
+      <h2>DR. BALTAZAR PIMENTEL GOMEZ S.R.L</h2>
+      <h2>RNC: 130664854</h2>
+</div>
+</div>  
+
+</div>
+<div class="row">
+ <div class="col-xs-12 headerdiv">
+   <div class="headercontainer">
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> No. </label> {{resultDetails.rSereal}}
+  </div>  
+    <div class="col-xs-6 details-container">
+      <label> Fecha </label> {{resultDetails.created}}
+    </div>  
+</div>
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> Nombre: </label> {{resultDetails.nombre}}
+  </div>  
+    <div class="col-xs-6 details-container">
+      <label> Muestra: </label> {{resultDetails.tipomuestraDesc}}
+    </div>  
+</div>
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> Medico: </label> {{resultDetails.doctorName}}
+  </div>  
+    <div class="col-xs-6 details-container">
+      <label> Edad: </label> {{resultDetails.patiendEdad}} años 
+    </div>  
+</div>
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> Centro: </label> {{resultDetails.clienteName}}
+  </div>  
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-12 title-reportName">
+    <label class="labelHeader"> {{resultDetails.reportName}}</label>
+  </div>  
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-xs-12">
+    <label>RESULTADOS:</label>
+    <div class="row ">
+       <div class="col-xs-5 resultContainer" id="resultContainer"> 
+                 <li class="resultItem" ng-repeat = "n in resultDetails.resultadoArray">
+                  {{n}}
+                 </li>
+              </div>
+       </div>
+    </div>
+  </div>
+  <br>  
+  <div class="row">
+  <div class="col-xs-12">
+    <label class="labelPrint">Diagnostico:</label>
+    <div class="row">
+       <div class="col-xs-12">
+       <div class="diagResult"> 
+          <div class="stepLine"> {{resultDetails.diagnostico}} </div>
+       </div>
+        </div>
+       </div>
+    </div>
+  </div> 
+<div class=" row">
+<div class="col-xs-12 footerB">
+ <div class="footdir">Av. Coronel Juan Maria Lor Fernandez #189 los Rios, Tels: Ofic. 809-732-0995, Santo Domingo </div>
+ </div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+

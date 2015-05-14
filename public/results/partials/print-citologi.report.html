@@ -1,0 +1,98 @@
+<section ng-controller="resultController">
+  <div ng-show="false">
+<!--  <button class="btn btn-primary" ng-print print-element-id="printThisElement"><i class="fa fa-print"></i> Print</button> -->
+ <div id="printThisElement">
+ <div class="container">
+
+<div id="headerdiv" >
+<div class="row">
+<div class="col-xs-3 title-containert">
+  <img src="images\logo1.jpg" width="235px">
+</div>
+<div class="col-xs-9 details-containert">
+<div class="titlecontainer">
+      <h1>LABORATORIO DE ANATOMIA PATOLOGICA Y CITOPATOLOGICA</h1>
+      <h2>DR. BALTAZAR PIMENTEL GOMEZ S.R.L</h2>
+      <h2>RNC: 130664854</h2>
+</div>
+</div>  
+
+</div>
+<div class="row">
+ <div class="col-xs-12 headerdiv">
+   <div class="headercontainer">
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> No. </label>
+  </div>  
+    <div class="col-xs-6 details-container">
+      <label> Fecha </label> {{date}}
+    </div>  
+</div>
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> Nombre: </label> {{name}}
+  </div>  
+    <div class="col-xs-6 details-container">
+      <label> Muestra: </label> {{muestra}}
+    </div>  
+</div>
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> Medico: </label> {{name}}
+  </div>  
+    <div class="col-xs-6 details-container">
+      <label> Edad: </label> {{muestra}}
+    </div>  
+</div>
+<div class="row">
+  <div class="col-xs-6 title-container">
+    <label> Centro: </label> {{centro}}
+  </div>  
+</div>
+
+</div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-xs-12 title-reportName">
+    <label> Report Name</label>
+  </div>  
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-xs-12">
+    <label>RESULTADOS:</label>
+    <div class="row">
+       <div class="col-xs-5 resultContainer" id="resultContainer"> 
+                 <li class="resultItem" ng-repeat = "n in result">
+                  {{n}}
+                 </li>
+              </div>
+       </div>
+    </div>
+  </div>  
+</div>
+
+<div class=" row">
+<div class="col-xs-12 footerB">
+ <p class="footdir">Av. Coronel Juan Maria Lor Fernandez #189 los Rios, Tels: Ofic. 809-732-0995, Santo Domingo </p>
+ </div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+</section>

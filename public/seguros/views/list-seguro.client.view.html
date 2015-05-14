@@ -1,0 +1,36 @@
+<section data-ng-controller="ciudadController as seguroCtrl" >
+   <div class="container">
+       <div class="panel panel-warning">
+           <div class="panel-heading">
+           <div class="row">
+                 <div class="col-md-8"><h1>Maestro Ciudad</h1></div>
+           </div>
+           </div> 
+           <seguro-list></seguro-list>
+          
+       </div>
+
+    <div class="alert alert-warning text-center" data-ng-hide="!seguroCtrl.seguro.$resolved || ciudadCtrl.ciudad.length">
+
+<!--     <div class="lit-group">
+        <a data-ng-repeat="pai in pais" data-ng-href="#!/pais/{{pai._id}}" class="list-group-item">
+		<div class ="row">
+           <div class="col.md.10">
+               
+           </div>
+			<h4 class="list-group-item-heading" data-ng-bind="pai.name"></h4>
+            <div class="col.md.2">
+                <div>
+                    <button type="button" class="btn btn-default" title="View" ng-click="view(customer)"><span class="glyphicon glyphicon-eye-open"></span></button> 
+
+                    <button type="button" class="btn btn-default" title="Edit" ng-click="edit(customer)"><span class="glyphicon glyphicon-edit"></span></button> 
+
+                    <button type="button" class="btn btn-default" title="Remove" ng-click="delete(customer)"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                 </div>
+            </div>
+        </div>
+        </a>
+    </div> -->
+    	No hay ningun pais registrado<a href="/#!/pais/create"> Crea uno</a>?
+    </div>
+</section>

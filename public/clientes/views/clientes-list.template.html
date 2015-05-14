@@ -1,0 +1,33 @@
+<div>
+  <table ng-table="tableParams" show-filter="true" class="table table-striped">
+  <!--   <thead>
+    <tr>
+      <th> <input class="form-control" id="clienteFilterId" placeholder="Filtrar Por Id" ng-model="filters.clienteId"><br>Cliente Id </br></th>
+      <th> <input class="form-control" id="clienteFilterName" placeholder="Filtrar Por Tipo" ng-model="filters.name"><br>Tipo de Cliente </br></th>
+      <th> <input class="form-control" id="clienteFilterName" placeholder="Filtrar Por Nombre" ng-model="filters.name"><br>Nombre </br></th>
+      <th> <input class="form-control" id="clienteFilterName" placeholder="Filtrar Por RNC" ng-model="filters.name"><br>Cliente RNC </br></th>
+      <th> <input class="form-control" id="clienteFilterName" placeholder="Filtrar Por Telefono" ng-model="filters.name"><br>Telefono </br></th>
+    </tr>
+   </thead> -->
+
+    <tr ng-repeat="cliente in $data">
+
+       <td data-title="'#'"  >{{cliente.clienteId}}</td>
+       <td data-title="'Nombre'" filter="{'name': 'text' }">{{cliente.name}}</td>
+       <td data-title="'RNC'" filter="{'clienteRNC': 'text' }">{{cliente.clienteRNC}}</td>
+       <td data-title="'Telefono'" filter="{'clienteTelefono': 'text' }">{{cliente.clienteTelefono}}</td>
+       <td>
+          <div>
+           <button type="button" class="btn btn-info" title="Editar" ng-click="clienteCtrl.modelUpdate('lg', cliente)">
+            <span class="glyphicon glyphicon-eye-open labelBig"></span></button> 
+            <button type="button" class="btn btn-danger" title="Remove" ng-click="clienteCtrl.modelRemove('sm', cliente)"><span class="glyphicon glyphicon-remove-circle labelBig"></span></button>
+         </div>
+
+       </td>
+     </tr>
+      
+  </table>
+   <div>
+     <p><strong>Total Clientes:</strong> {{total}}</p>
+     </div>
+</div>

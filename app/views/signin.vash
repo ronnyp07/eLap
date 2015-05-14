@@ -1,0 +1,65 @@
+@html.extend('layout', function(model) {
+
+@html.block("script", function(model) {
+
+})
+
+@html.block("head", function(model){
+  <style>
+  body  {
+      background-image: url("images/back1.png");
+      background-color: #cccccc;
+  }
+</style>
+})
+
+@html.block("body", function(model) {
+
+
+ <div class="container"  ng-class="cont">
+
+  <div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+   
+    <form class="form-signin" action="/signin" method="POST">
+
+        @if(model.err){
+    <div class="alert alert-danger" role="alert">@model.err
+     
+    </div>
+   }
+        
+           <div class="features">  <img src="images/logo_cloud.png" alt="login"></div> 
+            <fieldset id="loginForm">
+             <div class="panel panel-info" >
+             <div class="panel-heading">
+              <h3 class="panel-title"> INICIAR SESIÓN  </h3>
+             </div>
+            <div id="panelbody" class="panel-body">
+
+                        <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                 <input type="text" id="inputNombreUsuario" name="username" class="form-control" placeholder="Nombre Usuario">
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                             <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+                        </div>            
+                      
+                      <button class="btn btn-lg btn-primary btn-block" type="submit">Identificarse <i class="glyphicon glyphicon-log-in"></i></button>
+                        </div>
+                    </div>
+                </div>
+                    </fieldset>
+      </form>
+  </div>
+  <div class="col-md-4">
+  </div>
+  </div>
+  </div>
+
+})
+})

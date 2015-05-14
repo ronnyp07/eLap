@@ -1,0 +1,43 @@
+<section data-ng-controller="ciudadUpdateController as updateciudadCtrl">
+
+<div class="modal-header">
+        <h3 class="modal-title">Nueva Ciudad</h3>
+        </div>
+        <div class="modal-body">
+        <form name="updateciudadForm" id="updateciudadForm">
+            <fieldset>
+                <div class="form-group">
+                   <label class="control-label" for="pais">Pais</label>
+                    <div class="controls">
+                    <select data-ng-model="ciudad.rpais" id="rpais" class="form-control" ng-change="updateciudadCtrl.setNewPais(ciudad.rpais)" name="ciudad.rpais" ng-options="value._id as value.name for value in updateciudadCtrl.pais">
+                        <option value="" class="">-- Selecione Pais --</option>
+                        </select>        
+                    </div>
+                 </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">Ciudad:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="ciudad.name" id="name" class="form-control" placeholder="Nombre Ciudad" required>
+                        {{rpais}} {{name}}
+                    </div>
+               </div>
+              
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+      
+        
+        </div>
+
+        <div class="modal-footer">
+    <button class="btn btn-success" ng-click="updateciudadCtrl.update(ciudad); ok()"   ng-disabled="createCiudadForm.$invalid">Guardar & Salir</button>
+            <button class="btn btn-warning" ng-click="cancel()">Salir</button>
+      </div>
+
+</section>
+
+
+
+

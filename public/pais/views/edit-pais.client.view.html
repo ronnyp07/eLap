@@ -1,0 +1,32 @@
+<section data-ng-controller="PaisUpdateController as UpCtrl">
+
+<div class="modal-header">
+            <h3 class="modal-title">Editar Pais</h3>
+        </div>
+        <div class="modal-body">
+        
+
+        <form name="updatePaisForm">
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Pais:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="pais.name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+               </div>
+              
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+      
+        
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-success" ng-click="UpCtrl.update(pais); ok(); " ng-disabled="updatePaisForm.$invalid">Actualizar & Salir</button>
+            <button class="btn btn-warning" ng-click="cancel()">Salir</button>
+     </div>
+
+</section>

@@ -1,0 +1,58 @@
+<div>
+  <table ng-table="tableParams" show-filter="true" class="table table-striped">
+
+    <tr ng-repeat="order in $data">
+
+       <td data-title="'Folio'"  >{{order.orderId}}</td>
+       <td data-title="'Paciente'" filter="{'patientName': 'text' }">{{order.patientName}}</td>
+      <td data-title="'Doctor'" filter="{'doctorName': 'text' }">{{order.doctorName}}</td>
+      <td data-title="'Clinica'" filter="{'clienteName': 'text' }">{{order.clienteName}}</td>
+       <td data-title="'Fecha '" >{{order.created | date: 'dd/MM/yyyy'}}</td>
+     <!--   <td data-title="'Estatus'" ><span ng-if="order.statusOrder == 'Pendiente'" class="label label-danger"> {{order.statusOrder}} </span>
+        <span ng-if="order.statusOrder == 'Pagado'" class="label label-success"> {{order.statusOrder}} </span>
+       </td> -->
+       <td data-title="'Adeudo'" >{{order.total | currency}}</td>
+
+       <td>
+          <div>
+           <a class="btn btn-info" title="Editar" ng-click="modelDetail('lg', order)">
+            <span class="glyphicon glyphicon-eye-open"></span><a/> 
+            
+            <!-- <button type="button" class="btn btn-success" title="Facturar" ng-click="clienteCtrl.modelRemove('sm', cliente)"><span class="glyphicon glyphicon-usd "></span></button> -->
+
+           <!--   <button type="button" class="btn btn-primary" title="Imprimir" ng-click="clienteCtrl.modelRemove('sm', cliente)"><span class="glyphicon glyphicon-download-alt"></span></button> -->
+     
+         </div>
+       </td>
+     </tr>
+      
+  </table>
+   <div>
+     <p><strong>Total Clientes:</strong> {{total}}</p>
+   </div>
+</div>
+<div ng-if="edit == true">
+    <div class="panel panel-primary">
+                             <div class="panel-heading">
+                      <i class="glyphicon glyphicon-th"> </i> 
+                          Estudios Solicitados
+                      <i class="glyphicon glyphicon-chevron-down pull-right"></i>
+                             </div>
+         <div class="row">
+           <div class="col-sm-12">
+               <table class="table">
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Costo</th>
+                        <tr ng-repeat="orderd in orderExam">
+                          <td> {{orderd.rSereal}} </td>
+                          <td> {{orderd.tipomuestraDesc}} </td>
+                          <td> {{orderd.created | date: 'dd/MM/yyyy' }} </td>
+                          <td>  <a class="btn btn-info" title="Editar" >
+                          <span class="glyphicon glyphicon-eye-open"></span><a/> </td>                       
+                        </tr>
+                   </table>
+           </div>
+         </div>
+    </div>
+</div>

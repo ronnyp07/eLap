@@ -1,0 +1,46 @@
+<section ng-controller="CtrlCierre"> 
+<div class="panel panel-warning">
+           <div class="panel-heading">
+           <div class="row">
+                 <div class="col-md-8"><h1>Ano en curso 
+                 <strong>{{date}}</strong></h1></div>
+
+           </div>
+
+           </div> 
+           <div class="row">
+            <div class="col-md-12">
+           	 <md-radio-group ng-model="data.group1"  ng-change="read(data.group1)">
+			      <md-radio-button value="Cierre Mensual" ng-model="cMensual">Cierre Mensual</md-radio-button>
+			      <md-radio-button value="Cierre Anual" ng-model="cAnual"> Cierre Anual </md-radio-button>
+			    </md-radio-group>
+			     </div>
+           </div>	
+          
+           <div class="row">
+           <form id="monthClose" name="monthClose" ng-if="data.group1 == 'Cierre Mensual'">
+           	<div class="col-md-8">
+           <select data-ng-model="monthselected" id="monthselected" class="form-control" name="monthselected" ng-options="value.value as value.desc for value in monthResult" >
+                 <option value="" class="">-- Selecione Seguro --</option>
+                        </select>        
+           	</div>
+           	<div class="col-md-4">
+           	<md-button class="md-raised md-primary" ng-disabled = "monthselected == undefined" ng-click ="modelCierre(lg,monthselected); " >Procesar Cierre</md-button>
+           	</div>
+            </form>
+
+            <form id="yearClose" name="yearClose" ng-if="data.group1 == 'Cierre Anual'">
+            <div class="col-md-2">
+            
+            </div>
+            <div class="col-md-4">
+            <md-button class="md-raised md-primary" ng-click ="modelYearCierre(lg); " >Procesar Cierre  <strong>{{date}}</strong></md-button>
+            </div>
+            </form>
+           </div>
+           <div class="row">
+           	
+
+           </div>
+</div>
+</section>

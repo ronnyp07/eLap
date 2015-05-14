@@ -1,0 +1,46 @@
+<table class="table table-striped table-hover">
+           <tr>
+           <th>
+           </th>
+           <th>  
+          </th>
+
+          <th class="textRight">
+         <button type="submit" class="btn btn-large btn-success text-center" ng-click="paisCtrl.modelCreate('sm', pai)">
+         <i class="glyphicon glyphicon-globe"></i>
+         <br>Ingresar Pais</button>
+          </th>
+          </tr>
+           <tr>
+           <th>
+           Nombre de Pais
+              <!-- <button type="submit" class="btn btn-success" ng-click="new()">Ingresar Pais</button>
+ -->
+          </th>
+          <th>
+              
+          </th>
+
+          <th>
+           Accion
+          </th>
+          </tr>
+          <tr ng-repeat="pais in paisCtrl.pais"> 
+                <td>
+                    {{pais.name}}
+                </td>
+                <td></td>
+                <td>
+                 <div>
+
+
+           <button type="button" class="btn btn-info" title="Editar" ng-click="paisCtrl.modelUpdate('sm', pais)">
+            <span class="glyphicon glyphicon-eye-open labelBig"></span></button> 
+
+
+            <button type="button" class="btn btn-danger" title="Remove" ng-click="paisCtrl.remove(pais)"><span class="glyphicon glyphicon-remove-circle labelBig"></span></button>
+         </div>
+                </td>
+        </tr>
+</table>
+

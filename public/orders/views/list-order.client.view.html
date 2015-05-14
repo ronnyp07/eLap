@@ -1,0 +1,38 @@
+<section data-ng-controller="ordersController as orderCtrl" >
+   <div class="container">
+       <div class="panel panel-info">
+           <div class="panel-heading">
+           <div class="row">
+                 <div class="col-md-12"><i class="glyphicon glyphicon-th-list"></i> Detalles Ordenes</div>
+           </div>
+           </div> 
+           <div class="row">
+          
+           </div>        
+           <div class="row">
+           <div class="col-md-12 ">
+
+          <md-radio-group ng-model="data.group1">
+          <md-radio-button  ng-click="order.$edit = false" value="Ordenes" class="md-primary">Ordenes</md-radio-button>
+          <md-radio-button ng-click="order.$edit = true" value="Reportes"> Reportes </md-radio-button>
+        </md-radio-group>
+
+   
+         <!--  <div class="btn-group btn-group-lg" role="group" aria-label=" button group">
+                <button type="button" ng-click="order.$edit = false" class="btn btn-large btn-default">Ordenes</button>
+                <button type="button" ng-click="order.$edit = true" class="btn btn-large btn-info">Reportes </button>
+           </div>
+ -->       <div class="resultBody">
+           <order-list ng-if="!order.$edit"></order-list>
+           <result-list ng-if="order.$edit"></result-list>
+           </div>
+
+
+           </div>
+           </div>       
+       </div>
+       </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!cliente.$resolved || clienteCtrl.clientes.length">
+    	No hay ningun pais registrado<a href="/#!/pais/create"> Crea uno</a>?
+    </div>
+</section>

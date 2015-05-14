@@ -1,0 +1,52 @@
+<section data-ng-controller="procsCreateController as CreateCtrl">
+
+<div class="modal-header">
+        <h3 class="modal-title">Nuevo Procedimiento</h3>
+        </div>
+        <div class="modal-body">
+        <form name="createProcsForm" id="createProcsForm">
+            <fieldset>
+                <div class="form-group">
+                   <label class="control-label" for="pais">Nombre</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="CreateCtrl.name" id="name" class="form-control" autocomplete="off"placeholder="Nombre Procedimiento" required>
+                    
+                    </div>
+                 </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">Costo:</label>
+                    <div class="controls">
+                        <input type="number" data-ng-model="CreateCtrl.costo" autocomplete="off" id="costo" class="form-control" placeholder="Costo Procedimiento" >
+                    
+                    </div>
+               </div>
+               <div class="form-group">
+                    <label class="control-label" for="name">Categoria:</label>
+                    <div class="controls">
+            <select data-ng-model="CreateCtrl.proType" id="proType" class="form-control"  style="" required>
+            <option value="" class="">-- Categoria --</option>
+            <option value="B" label="Biopsia">Biopsia</option>
+            <option value="P" label="Papanicola">Papanicolau</option>
+            <option value="C" label="Citologia">Citologia</option>
+            <option value="BL" label="Base Liquida">Base Liquida</option>
+            </select>                   
+                    </div>
+               </div>
+              
+
+
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+      
+        
+        </div>
+
+        <div class="modal-footer">
+    <button class="btn btn-success" ng-click="CreateCtrl.create(); ok()" ng-disabled="createProcsForm.$invalid">Guardar & Salir</button>
+            <button class="btn btn-warning" ng-click="cancel()">Salir</button>
+      </div>
+
+</section>

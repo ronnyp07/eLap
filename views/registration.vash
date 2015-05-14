@@ -1,0 +1,212 @@
+@html.extend('layout', function(model) {
+
+@html.block("head", function(model) {
+  <link href="/css/vash.css" rel="stylesheet"></link> 
+})
+
+@html.block("body", function(model) {
+
+<div class="container">
+    <ul class= "nav nav-tabs">
+          <li class="active"> <a href="#paciente"data-toggle="tab">Paciente</a></li>
+          <li> <a href="#garante" data-toggle="tab">Garante</a></li>
+          <li> <a href="#seguro" data-toggle="tab">Seguro</a></li>
+          <li> <a href="#citas" data-toggle="tab">Citas</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="paciente"> 
+             <div class="well">
+             <form role="form">
+             <div class="row"> 
+             	<div class="col-md-2"> 
+                <div class="form-group">
+			    <label for="name">Title</label>
+			    <select  class="form-control">
+			      <option value="Sr">--Select Tittle--</option>
+				  <option value="Sr">Sr</option>
+				  <option value="Sra">Sra</option>
+				</select>
+			  </div><!-- /input-group -->
+              </div><!-- /col1 -->
+              <div class="col-md-10"></div> 
+             </div><!-- /row -->
+             
+             <div class="row"> 
+             	 <div class="col-md-2 col-xs-2">
+				    <div class="input-group">
+				      <label for="name">Primer Nombre</label>
+				      <input type="text" class="form-control">
+				    </div><!-- /input group -->
+				  </div><!-- /end -->
+				  <div class="col-md-2 col-xs-2">
+				    <div class="input-group">
+				     <label for="name">Segundo Nombre</label>
+				      <input type="text" class="form-control">
+				    </div>
+				  </div>
+                  <div class="col-md-2 col-xs-2">
+				    <div class="input-group">
+				      <label for="name">Primer Apellido</label>
+				      <input type="text" class="form-control">
+				    </div><!-- /input group -->
+				  </div><!-- /end -->
+				  <div class="col-md-2 col-xs-2">
+				     <div class="input-group">
+				     <label for="name">Segundo Apellido</label>
+				      <input type="text" class="form-control">
+				   </div>
+			 </div>
+			 <div class="col-md-2 col-xs-2">Aqui va el resto</div>
+
+             </div>
+             <div class="row rowInfo"> 
+			 	 <div class="col-md-2 col-xs-2">
+				    <div class="input-group">
+				      <label for="name">Nacimiento</label>
+				      <input type="text" class="form-control" placeholder="e.g 09/24/1954">
+				    </div><!-- /input group -->
+				  </div><!-- /end of column-->
+				   <div class="col-md-2 col-xs-2">
+				    <div class="input-group">
+				      <label for="name">Edad</label>
+				      <input class="form-control" type="text" >
+				    </div><!-- /input group -->
+				  </div><!-- /end of column-->
+
+				  <div class="col-md-2 col-xs-2">
+				    <div class="input-group">
+				      <label for="name">Estado Civil</label>
+				       <select class="form-control">
+				          <option value="">--Seleccione Estado--</option>
+						  <option value="Sr">Soltero</option>
+						  <option value="Sra">Casado</option>
+						</select>
+				    </div><!-- /input group -->
+				  </div><!-- /end of column-->
+			 </div><!-- /end of row-->
+			 <div class="row">
+                 <div class="col-md-4 col-xs-4" id="adres">
+                    <div id="adress">
+                    <h1>Direccion</h1>
+                    <div class="well" id="adresscont">
+                    <div clas="row">
+					<div class="col-md-8 col-xs-8" id="addressType">
+						 <input type="radio" name="sex" value="male" checked>Principal
+						<input id="rSecundary" type="radio" name="sex" value="female">Secundario
+					 </div>
+				     <div class="col-md-2 col-xs-2">
+				        <div class="input-group">
+				            <input class="btn btn-info btn-xs" value="Cambiar" type="button"></input>
+				           </div><!-- /input group -->
+				     </div><!-- /end of column-->
+				     
+				     </div><!-- /end of row-->
+				     <div class="row">
+				     	<div class="col-md-12 col-xs-12">
+				     	  <div>
+				       <label for="name">Calle:</label>
+				      <input type="text" >
+				           </div>
+				     	</div>
+
+				     </div>
+                     </div><!-- /end of well-->
+                    </div><!-- /end of adress--> 
+                 </div><!-- /ecol-md-4 col-xs-4-->
+                 <div class="col-md-4 col-xs-4">
+
+                 	<div id="telefon">
+                    <h1>Contacto</h1>
+                    <div class="well" id="telefoncount">
+                   
+				     <div class="row no-gutter rowContact">
+				     	<div class="col-md-12 col-xs-12" >
+				     	<div class="input-group fleft">
+				         <span class="input-group-addon center"><span class="glyphicon glyphicon-phone-alt"></span></span><input type="text" class="form-control"  placeholder="809-555-5555"></input>
+				        </div>		
+				        <div>
+				          <select  class="form-control phoneType">
+				          <option value="">--Tipo--</option>
+						  <option value="Sr">Casa</option>
+						  <option value="Sra">Celular</option>
+						  <option value="Sra">Trabajo</option>
+						</select>
+				        </div>	
+				     	</div>
+				     </div>
+
+				       <div class="row no-gutter rowContact">
+				     	<div class="col-md-12 col-xs-12" >
+				     	<div class="input-group fleft">
+				     	<span class="input-group-addon center"><span class="glyphicon glyphicon-earphone"></span></span>
+				        <input type="text"  class="form-control"></input>
+				        </div>		
+				        <div class= "dphoneType">
+				          <select  class="form-control phoneType">
+				          <option value="">--Tipo--</option>
+						  <option value="Sr">Casa</option>
+						  <option value="Sra">Celular</option>
+						  <option value="Sra">Trabajo</option>
+						</select>
+				        </div>	
+				     	</div>
+				     </div>
+
+				      <div class="row no-gutter rowContact">
+				     	<div class="col-md-12 col-xs-12" >
+				     	<div class="input-group fleft">
+				     	<span class="input-group-addon center"><span class="glyphicon glyphicon-phone"></span></span>
+				        <input type="text"  class="form-control inputTel"></input>
+				        </div>		
+				        <div class= "dphoneType">
+				          <select  class="form-control phoneType">
+				          <option value="">--Tipo--</option>
+						  <option value="Sr">Casa</option>
+						  <option value="Sra">Celular</option>
+						  <option value="Sra">Trabajo</option>
+						</select>
+				        </div>	
+				     	</div>
+				     </div>
+
+				      <div class="row no-gutter" id="rEmail">
+				     	<div class="col-md-12 col-xs-12" >
+				     	<label for="name">Email:</label>
+				     	<div class="input-group">
+				     	<span class="input-group-addon center"><span class="
+                           glyphicon glyphicon-envelope"></span></span>
+				        <input type="text"  class="form-control" placeholder="Correo"></input>
+				        </div>			
+				     	</div>
+				     </div>
+
+				     <div class="row no-gutter rowContact">
+				     <p class="fleft" id="pContact">Contactar Via:</p>
+				     	<select  class="form-control phoneType">
+				          <option value="">--Tipo--</option>
+						  <option value="Telefono">Telefono</option>
+						  <option value="Celular">Celular</option>
+						  <option value="Correo">Correo</option>
+						</select>
+				     </div>
+
+                     </div><!-- /end of well-->
+                    </div><!-- /end of telefon--> 
+
+                 </div><!-- /end of column-->
+			 </div><!-- /end of row-->
+              </form>
+           </div><!-- /end of well div-->
+      
+        </div><!-- /end of patient div-->
+
+        <div class="tab-pane fade" id="garante"> Garante</div>
+        <div class="tab-pane fade" id="seguro"> Seguros</div>
+        <div class="tab-pane fade" id="citas"> Citas</div>
+    
+    </div><!-- /end of tab container-->
+<div/><!-- /end of container div-->
+
+})
+})

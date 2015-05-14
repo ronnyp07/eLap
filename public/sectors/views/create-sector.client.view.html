@@ -1,0 +1,39 @@
+<section data-ng-controller="sectorCreateController as CreateCtrl">
+
+<div class="modal-header">
+        <h3 class="modal-title">Nuevo Sector</h3>
+        </div>
+        <div class="modal-body">
+        <form name="createSectorForm" id="createSectorForm">
+            <fieldset>
+                <div class="form-group">
+                   <label class="control-label" for="ciudad">Ciudad</label>
+                    <div class="controls">
+                    <select data-ng-model="CreateCtrl.Selectedciudad" id="Selectedciudad" class="form-control" name="Selectedciudad" ng-options="value._id as value.name for value in CreateCtrl.ciudad" required>
+                        <option value="" class="">-- Selecione Ciudad --</option>
+                        </select>        
+                    </div>
+                 </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">Sector:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="CreateCtrl.name" id="name" class="form-control" placeholder="Nombre Sector" required>
+                    
+                    </div>
+               </div>
+              
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+      
+        
+        </div>
+
+        <div class="modal-footer">
+    <button class="btn btn-success" ng-click="CreateCtrl.create(); ok()"   ng-disabled= "createSectorForm.$invalid">Guardar & Salir</button>
+            <button class="btn btn-warning" ng-click="cancel()">Salir</button>
+      </div>
+
+</section>

@@ -1,0 +1,48 @@
+<table class="table table-striped table-hover">
+           <tr>
+           <th>
+           </th>
+           <th>  
+          </th>
+
+          <th class="textRight">
+         <button type="submit" class="btn btn-large btn-success text-center" ng-click="sectorCtrl.modelCreate('sm', sector)">
+         <i class="glyphicon glyphicon-globe"></i>
+         <br>Ingresar Pais</button>
+          </th>
+          </tr>
+           <tr>
+           <th>
+           Sector
+              <!-- <button type="submit" class="btn btn-success" ng-click="new()">Ingresar Pais</button>
+ -->
+          </th>
+          <th>
+              
+          </th>
+
+          <th>
+           Accion
+          </th>
+          </tr>
+          <tr ng-repeat="sector in sectorCtrl.sector"> 
+                <td>
+                    {{sector.name}}
+                </td>
+                <td>
+                   {{sector.ciudad.name}}
+                </td>
+                <td>
+                 <div>
+
+
+           <button type="button" class="btn btn-info" title="Editar" ng-click="sectorCtrl.modelUpdate('sm', sector)">
+            <span class="glyphicon glyphicon-eye-open labelBig"></span></button> 
+
+
+            <button type="button" class="btn btn-danger" title="Remove" ng-click="sectorCtrl.remove(sector)"><span class="glyphicon glyphicon-remove-circle labelBig"></span></button>
+         </div>
+                </td>
+        </tr>
+</table>
+

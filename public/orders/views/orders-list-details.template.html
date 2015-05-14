@@ -1,0 +1,32 @@
+<section>
+<div class="modal-body">
+           <div class="modal-body">
+               <div class="panel panel-primary">
+                             <div class="panel-heading">
+                <i class="glyphicon glyphicon-th"> </i> 
+                          Estudios Solicitados
+                <i class="glyphicon glyphicon-chevron-down pull-right"></i>
+                             </div>
+         <div class="row">
+           <div class="col-sm-12">
+               <table class="table">
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Fecha Creado</th>
+                        <tr ng-repeat="orderd in orderExam">
+                          <td> {{orderd.rSereal}} </td>
+                          <td> {{orderd.tipomuestraDesc}} </td>
+                          <td> {{orderd.created | date: 'dd/MM/yyyy' }} </td>
+                          <td>  <a class="btn btn-info" title="Editar" ng-click="setResult(orderd); ok();">
+                          <span class="glyphicon glyphicon-eye-open"></span><a/> </td>                       
+                        </tr>
+                   </table>
+           </div>
+         </div>
+    </div>
+           </div>
+  </div>
+  <div class="modal-footer">
+   <button class="btn btn-warning" ng-click="cancel()">Cancelar</button>
+   </div>
+</section>

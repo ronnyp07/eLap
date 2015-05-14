@@ -1,0 +1,123 @@
+<section data-ng-controller="doctorCreateController as createCtrl" >
+    <div class="modal-header">
+        <h3 class="modal-title">Nuevo Doctor</h3>
+    </div>
+    <div class="modal-body">
+        <form name="createDoctorForm" id="createDoctorForm">
+            <fieldset>
+                <div class="row">
+                    <div class="form-group">
+                        <div data-g-show="error" class="text-center text-danger ng-hide">
+                            <div class="alert alert-danger" role="alert">
+                                <strong data-ng-bind="error" class="ng-binding"></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                         <div class="panel panel-success well">
+                             <div class="panel-heading">
+                               Informacion del Doctor
+                             </div>
+                                  
+                  <div class="form-group divmargin" >
+                            <label class="control-label" for="DoctorCI">C.I.</label>
+                             <div class="controls">
+                        <select data-ng-model="createCtrl.DoctorCI.tipo" id="createCtrl.tipo" class="form-control" name="tipo" style=""><option value="" class="">-- Tipo Entidad --</option><option value="Cedula" label="">Cedula</option><option value="Pasaporte" label="">Pasaporte</option>
+                         <option value="RNC" label="">RNC</option></select>
+                            </div>
+                            <div class="controls">
+                                <input type="text" data-ng-model="createCtrl.DoctorCI.tipovalue" name="tipovalue" id="tipovalue" class="form-control" placeholder="ej. 000-000000-0" style="">
+                            </div>
+                
+                            
+                        </div>
+
+                 <div class="form-group">
+                 <label class="control-label" for="name">Nombre</label>
+                        <div class="controls">
+                          <input type="text" data-ng-model="createCtrl.firstName" id="firstName" name="firstName" class="form-control">
+                       </div>
+                  </div>
+                   <div class="form-group">
+                            <label class="control-label" for="doctorLastName">Apellidos</label>
+                            <div class="controls">
+                             <input type="text" data-ng-model="createCtrl.lastName" id="doctorLastName" name="lastName" class="form-control">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                          <label class="control-label" for="doctorTelefono">Telefono</label>
+                            <div class="controls">
+                            <input type="text" data-ng-model="createCtrl.DoctorTelefono" id="DoctorTelefono" name="DoctorTelefono" class="form-control">
+                            </div>
+                    </div>
+                     <div class="form-group">
+                          <label class="control-label" for="doctorTelefono">Email</label>
+                            <div class="controls">
+                            <input type="email" data-ng-model="createCtrl.DoctorEmail" id="DoctorEmail" name="DoctorEmail" class="form-control">
+                            </div>
+                    </div>
+
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="panel panel-warning well">
+                             <div class="panel-heading"> 
+                             Informacion Distrital</div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="doctorPais">Pais</label>
+                            <div class="controls">
+                        <select data-ng-model="createCtrl.doctorPais" data-ng-change="createCtrl.filterByPais()"  id="doctorPais" class="form-control" ng-options="value._id as value.name for value in createCtrl.pais" >
+                        <option value="" class="">-- Selecione Pais --</option>
+                        </select>        
+                            </div>
+                            </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="doctorZona">Zona</label>
+                            <div class="controls">
+                        <select data-ng-model="createCtrl.doctorZona" id="doctorZona" class="form-control" name="doctorZona" ng-options="value._id as value.doctorNombre for value in doctors" >
+                        <option value="" class="">-- Selecione Zona --</option>
+                        </select>        
+                            </div>
+                        </div>
+                        
+          <div class="form-group">
+                  <label class="control-label" for="doctorCiudad">Ciudad</label>
+                <div class="controls">
+              <select ui-select2 data-ng-model="createCtrl.doctorCiudad" class="selec2Big" data-ng-change="createCtrl.filterByCiudad()" data-placeholder="-- Selecione Ciudad --">  <option value=""></option>
+              <option ng-repeat="value in createCtrl.ciudad | filter:createCtrl.doctorPais " value="{{value._id}}">{{value.name}}
+              </option>
+                            </select> 
+
+                            </div>
+                        </div>
+                      <div class="form-group">
+                            <label class="control-label" for="doctorSector">Sector</label>
+                            <div class="controls">
+                        <select data-ng-model="createCtrl.doctorSector" id="doctorSector" class="form-control" name="doctorSector" ng-options="value._id as value.name for value in createCtrl.sector | filter:createCtrl.doctorCiudad" >
+                        <option value="" class="">-- Selecione Sector --</option>
+                        </select>        
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label" for="doctorDireccion">Direccion</label>
+                            <div class="controls">
+                              <input type="text" data-ng-model="createCtrl.DoctorDireccion" id="DoctorDireccion" name="DoctorDireccion" class="form-control" placeholder="Insertar Direccion">
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                </div>
+             
+            
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success btn-lg"  ng-click="createCtrl.create(); ok(); createCtrl.showDoctorSave()" ng-disabled="createDoctorForm.$invalid">Save &amp; Close</button>
+        <button class="btn btn-warning btn-lg" ng-click="cancel()">Cancel</button>
+    </div>
+
+</section>

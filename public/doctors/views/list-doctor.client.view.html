@@ -1,0 +1,31 @@
+<section data-ng-controller="doctorsController as doctorsCtrl" >
+   <div class="container">
+       <div class="panel panel-info">
+           <div class="panel-heading">
+           <div class="row">
+                 <div class="col-md-12"><h1><i class="glyphicon glyphicon-user"></i> Maestro Doctores</h1></div>
+           </div>
+           </div> 
+           <div class="row">
+           <div class="col-md-12 textRight divmarginAll">
+           <div>
+            <button type="submit" class="btn btn-large btn-primary text-center" ng-click="doctorsCtrl.modelCreate('lg')">
+             <i class="glyphicon glyphicon-globe"></i>
+             <br>Ingresar Doctor</button>
+           </div>
+           </div>
+           </div>
+          
+           <div class="row">
+           <div class="col-md-12">
+           <doctors-list></doctors-list>
+           </div>
+           </div>
+          
+       </div>
+       </div>
+
+    <div class="alert alert-warning text-center" data-ng-hide="!cliente.$resolved || doctorsCtrl.clientes.length">
+      No hay ningun procedimiento registrado<a href="/#!/pais/create"> Crea uno</a>
+    </div>
+</section>
